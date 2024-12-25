@@ -1,0 +1,19 @@
+stages:
+  - build
+  - test
+  - docker-image
+  - docker-deploy
+
+
+
+build:
+  stage: build
+  script:
+    - echo "build is started ..."
+    - mvn clean compile install
+  artifacts:
+    paths:
+      - target/*.jar
+
+
+
